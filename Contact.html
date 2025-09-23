@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Me</title>
+    <link rel="stylesheet" href="contact.css">
+    <!-- Font Awesome for social icons -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+</head>
+
+<body>
+    <div class="contact-container">
+        <div class="contact-card">
+            <h1>Get in Touch</h1>
+            <p>Have a question, idea, or just want to say hi? Fill the form below or connect with me on socials.</p>
+
+            <form action="https://formspree.io/f/xldpejng" method="POST" enctype="multipart/form-data">
+                <div class="input-group">
+                    <input type="text" name="firstname" placeholder="First Name" required>
+                    <input type="text" name="lastname" placeholder="Last Name" required>
+                </div>
+                <textarea name="message" placeholder="Write your message..." required></textarea>
+
+                <input type="file" name="attachment" accept="image/*,.pdf,.doc,.docx">
+
+                <button type="submit">Send Message</button>
+            </form>
+
+            <div class="social-links">
+                <a href="https://wa.me/2349033262598" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                <a href="https://facebook.com/yourprofile" target="_blank"><i class="fab fa-facebook"></i></a>
+                <a href="https://www.linkedin.com/in/israel-bright-babatunde-74490a336/" target="_blank"><i class="fab fa-linkedin"></i></a>
+                <a href="https://www.tiktok.com/@tech.wizard696?" target="_blank"><i class="fab fa-tiktok"></i></a>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

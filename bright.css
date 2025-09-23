@@ -1,0 +1,146 @@
+[data-theme="dark"] .hinx,
+[data-theme="dark"] .hinx h2,
+[data-theme="dark"] .hinx p {
+  color: #fff !important;
+}
+
+.about {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  max-width: 1000px;
+  margin: 80px auto;
+  padding: 20px;
+  flex-wrap: wrap;
+}
+
+.about-img {
+  width: 280px;
+  height: 390px;
+  object-fit: cover;
+  border-radius: 12px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease;
+}
+
+.about-img:hover {
+  transform: scale(1.05);
+}
+
+.about-text {
+  flex: 1;
+  font-size: 17px;
+  line-height: 1.7;
+  color: #333;
+}
+
+.about-text h2 {
+  font-size: 26px;
+  margin-bottom: 15px;
+}
+
+.about-text span {
+  color: #2563eb;
+  /* accent color */
+}
+
+@media (max-width: 768px) {
+  .about {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .about-img {
+    width: 320px;
+    height: 260px;
+  }
+
+  .about-text {
+    font-size: 16px;
+  }
+}
+
+:root {
+  --bg: linear-gradient(135deg, #f0f9ff, #e0f7fa);
+  --card: #ffffff;
+  --text: #0a3d62;
+  --primary: #00a8ff;
+  --shadow: rgba(0, 0, 0, 0.1);
+}
+
+
+[data-theme="dark"] {
+  --bg: linear-gradient(135deg, #0a0f1f, #141c2f) !important;
+  --card: #1c1f26 !important;
+  --text: #e6edf3 !important;
+  --primary: #00a8ff !important;
+  --shadow: rgba(0, 0, 0, 0.6);
+}
+
+/* Section */
+.services {
+  padding: 80px 20px;
+  background: var(--bg);
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+/* Title */
+.services-title {
+  text-align: center;
+  font-size: 2.5rem;
+  color: var(--text);
+  font-weight: bold;
+  margin-bottom: 50px;
+  position: relative;
+}
+
+.services-title::after {
+  content: "";
+  display: block;
+  width: 90px;
+  height: 4px;
+  background: var(--primary);
+  margin: 12px auto 0;
+  border-radius: 2px;
+}
+
+/* Flex container */
+.unider {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: center;
+}
+
+/* Service Cards */
+.hinx {
+  flex: 1 1 300px;
+  max-width: 320px;
+  background: var(--card);
+  border-radius: 16px;
+  padding: 25px 20px;
+  text-align: center;
+  transition: all 0.35s ease;
+  box-shadow: 0 8px 20px var(--shadow);
+  border-top: 5px solid var(--primary);
+}
+
+.hinx:hover {
+  transform: translateY(-10px) scale(1.03);
+  box-shadow: 0 12px 30px var(--primary);
+}
+
+/* Card Title */
+.hinx h2 {
+  font-size: 1.4rem;
+  margin-bottom: 15px;
+  color: var(--text);
+  font-weight: 600;
+}
+
+/* Card Text */
+.hinx p {
+  font-size: 1rem;
+  color: var(--text);
+  line-height: 1.6;
+}
