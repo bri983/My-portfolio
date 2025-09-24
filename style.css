@@ -88,6 +88,7 @@ body.dark-mode .hinx h2 {
     /* color: #ffe082; */
     color: white;
 }
+
 body.dark-mode .hinx p {
     color: white;
 }
@@ -175,6 +176,18 @@ body.dark-mode {
 
 .dark-mode .about-img {
     border-color: #ffe082;
+}
+
+/* Make nav links white in dark mode */
+/* Dark mode: style the whole dropdown menu */
+body.dark-mode .sam {
+    background: linear-gradient(90deg, #232946 0%, #181c24 100%);
+    color: white !important;
+}
+
+body.dark-mode .sam li,
+body.dark-mode .sam a {
+    color: white !important;
 }
 
 
@@ -351,6 +364,7 @@ body.dark-mode {
         font-size: 1rem;
         padding: 6px 12px;
     }
+    
 }
 
 @media (max-width: 600px) {
