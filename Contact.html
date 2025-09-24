@@ -1,12 +1,12 @@
+<!-- contact.html -->
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Contact Me</title>
     <link rel="stylesheet" href="contact.css">
-    <!-- Font Awesome for social icons -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
 </head>
 
@@ -15,13 +15,15 @@
         <div class="contact-card">
             <h1>Get in Touch</h1>
             <p>Have a question, idea, or just want to say hi? Fill the form below or connect with me on socials.</p>
+            <form id="contact-form" action="https://formspree.io/f/xldpejng" method="POST"
+                enctype="multipart/form-data">
+                <input type="hidden" name="_next" value="https://bri983.github.io/My-portfolio/form.html">
 
-            <form action="https://formspree.io/f/xldpejng" method="POST" enctype="multipart/form-data">
                 <div class="input-group">
                     <input type="text" name="firstname" placeholder="First Name" required>
                     <input type="text" name="lastname" placeholder="Last Name" required>
-                    <input type="hidden" name="_next" value="https://bri983.github.io/My-portfolio//form.html">
                 </div>
+
                 <textarea name="message" placeholder="Write your message..." required></textarea>
 
                 <input type="file" name="attachment" accept="image/*,.pdf,.doc,.docx">
@@ -29,14 +31,58 @@
                 <button type="submit">Send Message</button>
             </form>
 
-            <div class="social-links">
+            <div class="social-links" style="margin-top:1.25rem">
                 <a href="https://wa.me/2349033262598" target="_blank"><i class="fab fa-whatsapp"></i></a>
                 <a href="https://facebook.com/yourprofile" target="_blank"><i class="fab fa-facebook"></i></a>
-                <a href="https://www.linkedin.com/in/israel-bright-babatunde-74490a336/" target="_blank"><i class="fab fa-linkedin"></i></a>
+                <a href="https://www.linkedin.com/in/israel-bright-babatunde-74490a336/" target="_blank"><i
+                        class="fab fa-linkedin"></i></a>
                 <a href="https://www.tiktok.com/@tech.wizard696?" target="_blank"><i class="fab fa-tiktok"></i></a>
             </div>
         </div>
     </div>
+
+    <script>
+        (function () {
+            const form = document.getElementById('contact-form');
+            const successURL = 'https://bri983.github.io/My-portfolio/form.html'; // where to redirect on success
+
+            form.addEventListener('submit', async function (e) {
+                e.preventDefault();
+                const submitBtn = form.querySelector('button[type="submit"]');
+                const oldText = submitBtn.innerHTML;
+                submitBtn.disabled = true;
+                submitBtn.innerHTML = 'Sending...';
+
+                // Build FormData (includes file if provided)
+                const data = new FormData(form);
+
+                try {
+                    const response = await fetch(form.action, {
+                        method: 'POST',
+                        body: data,
+                        headers: {
+                            'Accept': 'application/json'
+                        }
+                    });
+
+                    if (response.ok) {
+                        window.location.href = successURL;
+                        return;
+                    }
+                    let text;
+                    try { text = await response.text(); } catch (err) { text = '(no text)'; }
+                    console.error('Formspree returned non-OK:', response.status, text);
+                    alert('Submission failed (server error). Check console for details.');
+                } catch (networkErr) {
+                    console.error('Network error when sending form:', networkErr);
+                    alert('Network error. Make sure your site is hosted (HTTPS) and your Formspree action URL is correct.');
+                } finally {
+                    submitBtn.disabled = false;
+                    submitBtn.innerHTML = oldText;
+                }
+            });
+        })();
+    </script>
 </body>
 
 </html>
