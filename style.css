@@ -21,6 +21,7 @@
     gap: 28px;
     flex-wrap: wrap;
     justify-content: center;
+    color: var(--text);
 }
 
 .hinx {
@@ -44,6 +45,14 @@
 .hinx p {
     font-size: 1rem;
     line-height: 1.6;
+}
+
+.services,
+.services-title,
+.hinx,
+.hinx h2,
+.hinx p {
+    color: var(--text);
 }
 
 @media (max-width: 900px) {
@@ -76,7 +85,11 @@ body.dark-mode .hinx {
 }
 
 body.dark-mode .hinx h2 {
-    color: #ffe082;
+    /* color: #ffe082; */
+    color: white;
+}
+body.dark-mode .hinx p {
+    color: white;
 }
 
 /* Light/Dark mode toggle button styles */
